@@ -1,4 +1,5 @@
 #include <iostream>
+#include<algorithm>
 #define MAX 20
 using namespace std;
 int main() {
@@ -24,6 +25,8 @@ int main() {
         temp_arr[i] = count;
     }
     
+    std::sort(temp_arr, temp_arr + size);
+    int max_consecutice_1s = temp_arr[size -1];
+    cout << "Max Consecutive 1s : " << max_consecutice_1s << endl;
     
-    
-    
+}
