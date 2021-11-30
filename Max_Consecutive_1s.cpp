@@ -25,7 +25,7 @@ int main() {
         temp_arr[i] = count;
     }
     
-    std::sort(temp_arr, temp_arr + size);
+    sort(temp_arr, temp_arr + size);
     int max_consecutice_1s = temp_arr[size -1];
     cout << "Max Consecutive 1's : " << max_consecutice_1s << endl;
     
