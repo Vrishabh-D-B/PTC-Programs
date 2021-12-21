@@ -1,32 +1,38 @@
 #include<bits/stdc++.h>
 using namespace std;
-
-void productExceptSelf(vector<int> nums) {
-        int n = nums.size();
-        vector<int>lr(n,0);
-        vector<int>rl(n,0);
-        vector<int>res(n,0);
+int main()
+{    
+     int n;
+    cin>>n;
+    
+    vector<int>vect; 
+     for(int i=0; i<n; i++)
+     {
+         int ele;
+         cin>>ele;
+       vect.push_back(ele);
+     }
+     int i=n-1;
+    while(i>=0 && vect[i]<vect[i-1])
+    {
         
-        lr[0] = nums[0];
-        rl[n - 1] = nums[n - 1];
-        
-        for(int i = 1; i < n; i++){
-            lr[i] = lr[i-1] * nums[i];
-            rl[n-1-i] = rl[n-i] * nums[n-1-i];
-        }
-        
-        res[0] = rl[1];
-        res[n-1] = lr[n-2];
-        for(int i = 1; i < n-1; i++){
-            res[i] = lr[i-1] * rl[i+1];
-        }
-        
-        for(int x : res)
-            cout << x << "  ";
+          i--;
     }
-
-    int main(){
-        vector<int> nums{ 1, 2, 3, 4};
-        productExceptSelf(nums);
-        return 0;
+    if(i>0)
+    { int j=n-1;
+    while(vect[j]<vect[i-1])
+    {
+        j--;
+    }    
+    int temp=vect[i-1];
+        vect[i-1]=vect[j + 1];  //swapping
+        vect[j+1]=temp;
+        reverse(vect.begin()+i,vect.end());
     }
+    else
+     cout<<"not valid number";
+        for(auto x :vect)
+        {
+            cout<< x << " ";
+        }
+    }    
