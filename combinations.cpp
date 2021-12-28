@@ -1,38 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-// set<vector<int>> res;
-//     void combinations(vector<int> osf, int n, int k, int i){        
-//         if(i == k){
-//             res.insert(osf);
-//             return;
-//         }
-//         for(int j = 1; j <= n; j++){
-//             osf.push_back(j);
-//             combinations(osf,n,k,i+1);
-//             osf.pop_back();
-//         }
-//         return;
-//     }
-//     vector<vector<int>> combine(int n, int k) {
-//         vector<vector<int>> result;
-//         set<set<int>> resultset;
-//         vector<int>osf;
-//         combinations(osf,n,k,0);
-        
-//         for(auto x : res){
-//             set<int>y(x.begin(),x.end());
-//             resultset.insert(y);
-//         }
-//         for(auto x : resultset){
-//             if(x.size() == k){
-//                 vector<int>y;
-//                 y.assign(x.begin(),x.end());
-//                 result.push_back(y); 
-//             }
 
-//         }
-//         return result;
-//     }
     void solve( int idx,int k , int n , vector<bool>&used, vector<vector<int> >&res ,vector<int> &osf ){
         if(osf.size()==k){
             res.push_back(osf);
